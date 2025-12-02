@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: vehicle_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: vehicles
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  api:
+    build: .
+    container_name: vehicle_api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/vehicles
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:
