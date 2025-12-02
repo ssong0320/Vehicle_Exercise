@@ -4,7 +4,7 @@ A RESTful API for vehicle inventory management built with FastAPI and PostgreSQL
 
 To run:
 
-brew services start postgresql@15
+brew services start postgresql@17
 
 export DATABASE_URL="postgresql://user:password@localhost:5432/vehicles_local"
 
