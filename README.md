@@ -14,8 +14,6 @@ To test:
 
 pytest test_api.py -vv
 
-This will automatically create a local SQLite database in local.db.
-
 # Run with Docker
 
 To run:
